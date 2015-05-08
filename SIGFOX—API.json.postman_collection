@@ -1,0 +1,301 @@
+{
+	"id": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+	"name": "SIGFOX API",
+	"description": "To retrieve your API credentials : \n* Log in the [SIGFOX backend](http://backend.sigfox.com)\n* Go the _GROUP_ section\n* Select your group\n* In the sidebar, choose _Api Access_\n* This is were your credentials are .. If not, click the _New_ Button on the top right",
+	"order": [
+		"5788e586-5ba8-9155-c9bd-8531d88e05a8",
+		"99c4abc6-1d61-54f0-2735-6e243641343b",
+		"a24732e0-48e5-fe65-0173-5767b8a8603b",
+		"ae27993b-2943-36f2-d356-62110372c1f7",
+		"e3143ff4-7151-e866-df00-11ef4c0cfa17",
+		"d4cdc2e3-0a15-48a4-113e-70a0297e6720",
+		"614fa502-8da1-0e93-9c21-20301f941273",
+		"cc24a440-4ba9-e5ce-2754-1d51c9a06ad0",
+		"fcd8d232-430b-0a8e-6f76-2b9b3d44f737",
+		"547c794b-b778-c6ee-c0bd-b5f002268262",
+		"1ed2efc7-79fc-943f-0ea1-77f71a284e31"
+	],
+	"folders": [],
+	"timestamp": 1431074538682,
+	"synced": false,
+	"owner": 0,
+	"subscribed": false,
+	"remoteLink": "",
+	"public": false,
+	"write": true,
+	"requests": [
+		{
+			"id": "1ed2efc7-79fc-943f-0ea1-77f71a284e31",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devicetypes/:id/messages",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074803573,
+			"name": "Device-type devices messages",
+			"description": "Messages sent by the devices of a device type\n\nGet the messages that were sent by all the devices of a device type, in reverse chronological order (most recent messages first).\n\nRequest\n\nGET https://backend.sigfox.com/api/devicetypes/{devicetype-id}/messages\n\nParameters:\n\n    devicetype-id the identifier of the device type, as returned by the /api/devicetypes endpoint.\n\nOptionally, the request can also have the following parameter (see next response field below):\n\n    limit: maximum number of messages to return\n    before: return messages sent before this timestamp (in milliseconds since the Unix Epoch).\n    since: return messages sent since this timestamp (in milliseconds since the Unix Epoch).\n\nResponse\n\n{\n  \"data\" : [ {\n    \"device\" : \"002C\",\n    \"time\" : 1343321977,\n    \"data\" : \"3235353843fc\",\n    \"snr\" : \"38.2\"\n  } ],\n  \"paging\" : {\n    \"next\" : \"https://backend.sigfox.com/api/devicetypes/51086fcde4b0b1b30a01c491/messages?limit=100&before=1338803969\"\n  }\n}\n    \n\nFields:\n\n    data: the array of device messages\n    device: device identifier\n    time: time the message was sent, in milliseconds since the Unix Epoch\n    data: message content, hex encoded\n    snr: the best SNR of the messages received by the network so far\n    paging: paging information, if more messages are available\n    next: URL of the next «page» of messages\n\n",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "547c794b-b778-c6ee-c0bd-b5f002268262",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devicetypes/:id/id-pac",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074727240,
+			"name": "List of devices associated to a given device-type",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "5788e586-5ba8-9155-c9bd-8531d88e05a8",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074666913,
+			"name": "Device info",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "614fa502-8da1-0e93-9c21-20301f941273",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id/messages/metric",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074690536,
+			"name": "Device messages metrics",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "99c4abc6-1d61-54f0-2735-6e243641343b",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id/messages",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074671328,
+			"name": "Device messages",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "a24732e0-48e5-fe65-0173-5767b8a8603b",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id/locations",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074675448,
+			"name": "Device locations",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "ae27993b-2943-36f2-d356-62110372c1f7",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id/status/error",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074679405,
+			"name": "Device status errors",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "cc24a440-4ba9-e5ce-2754-1d51c9a06ad0",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devicetypes/:id",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074699494,
+			"name": "Device-type info",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "d4cdc2e3-0a15-48a4-113e-70a0297e6720",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/callbacks/messages/error",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074620728,
+			"name": "Messages not sent this month",
+			"description": "Returns device messages where at least one callback has failed, in reverse chronological order (most recent message first).",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "e3143ff4-7151-e866-df00-11ef4c0cfa17",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devices/:id/status/warn",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074683463,
+			"name": "Device status warnings",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "fcd8d232-430b-0a8e-6f76-2b9b3d44f737",
+			"headers": "",
+			"url": "https://backend.sigfox.com/api/devicetypes/:id/callbacks",
+			"preRequestScript": "",
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": ":login",
+				"password": ":password"
+			},
+			"time": 1431074713726,
+			"name": "Device-type callbacks list",
+			"description": "",
+			"collectionId": "bd8f9c3f-9138-e10c-231b-b58420605b30",
+			"responses": [],
+			"synced": false
+		}
+	]
+}
